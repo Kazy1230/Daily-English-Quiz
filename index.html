@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>クイズ</title></head>
+<body>
+  <h1>{{ question.term }} の意味は？</h1>
+  <form action="/submit" method="post">
+    {% for choice in question.choices %}
+      <input type="radio" name="choice" value="{{ 'ABCD'[loop.index0] }}" required>
+      {{ choice }}<br>
+    {% endfor %}
+    <input type="hidden" name="question_number" value="{{ question_number }}">
+    <button type="submit">回答する</button>
+  </form>
+</body>
+</html>
