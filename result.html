@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>結果</title></head>
+<body>
+  <h2>{{ '正解！' if is_correct else '不正解！' }}</h2>
+  {% if next_question %}
+    <form action="/" method="get">
+      <input type="hidden" name="question_number" value="{{ question_number }}">
+      <button type="submit">次の問題へ</button>
+    </form>
+  {% else %}
+    <p>クイズ終了！お疲れ様でした。</p>
+  {% endif %}
+</body>
+</html>
